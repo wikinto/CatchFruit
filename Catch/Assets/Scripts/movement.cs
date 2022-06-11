@@ -13,9 +13,9 @@ public class movement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        x += Input.GetAxis("Horizontal") * 0.03f;
+        x += Input.GetAxis("Horizontal") * 0.5f;
         //Debug.Log(Input.GetAxis("Horizontal"));
         
         ply.transform.position = new Vector3(x,0,0);

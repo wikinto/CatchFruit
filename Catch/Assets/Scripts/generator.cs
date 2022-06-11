@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class generator : MonoBehaviour
 {
     int x;
+    
     public GameObject[] objs;
     int rand;
     GameObject inst;
@@ -16,8 +19,11 @@ public class generator : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        if(prev.gameObject.tag == "apple" && prev.transform.position.y <= -3 && prev != null){
+            Globals.lives--;
+        }
         if(prev.transform.position.y <= -3 && prev != null){
             Destroy(prev);
         }

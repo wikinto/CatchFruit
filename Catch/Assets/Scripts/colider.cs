@@ -3,22 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+public static class Globals{
+    public static int score = 0;
+    public static int lives = 3;
+}
 public class colider : MonoBehaviour
 {
     public Text punkty;
     public Text zycia;
-    int score;
-    int lives = 3;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        zycia.text = "Zycia: " + Globals.lives.ToString();
+        if(Globals.lives <= 0){
+            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        }
     }
 
     /// <summary>
@@ -33,21 +39,15 @@ public class colider : MonoBehaviour
         switch (other.gameObject.tag)
         {
             case "apple":
-                score++;
+                Globals.score++;
                 break;
             case "brick":
-                lives--;
+                Globals.lives--;
                 break;
             default:
                 break;
         }
-        
-        if(lives <= 0){
-            UnityEngine.SceneManagement.SceneManager.LoadScene(2);
-        }
-        punkty.text = "Punkty: " + score.ToString();
-        zycia.text = "Zycia: " + lives.ToString();
-        Debug.Log(score);
+        punkty.text = "Punkty: " + Globals.score.ToString();
         
     }
 }

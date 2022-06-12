@@ -1034,4 +1034,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Start.unity
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/GameOver.unity
-  playerPath: E:/Downloads/CatchFruit/CatchFruit.exe
+  playerPath: E:/Downloads/CatchFruitPUZ/CatchFruit.exe
